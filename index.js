@@ -3,7 +3,8 @@ const cors = require('cors');
 const mongoose = require('mongoose'); 
 const dotenv = require('dotenv'); 
 const authRoute = require('./routes/auth');
-const postRoute = require('./routes/posts')
+const postRoute = require('./routes/posts');
+const userRoute = require('./routes/users');
 
 const app = express();
 dotenv.config(); 
@@ -14,7 +15,8 @@ app.use(express.json());
 
 //All Api routes
 app.use("/api/auth", authRoute);
-app.use("/api/posts", postRoute)
+app.use("/api/posts", postRoute);
+app.use("/api/users", userRoute);
 
 //MongoDB connect
 mongoose.set('strictQuery', true);
