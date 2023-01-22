@@ -1,53 +1,54 @@
-const mongoose = require('mongoose') 
+const mongoose = require('mongoose')
+
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
-        min: 3, 
+        min: 3,
         max: 20,
         unique: true
     },
     email: {
         type: String,
         required: true,
-        max: 30, 
+        max: 30,
         min: 5,
         unique: true
     },
     password: {
         type: String,
         required: true,
-        min: 7, 
+        min: 7,
     },
     addres: {
         type: String,
-        required: false, 
+        required: false,
         min: 5,
         default: ""
     },
     dateOfBirth: {
-        type: Date, 
+        type: Date,
         default: ""
     },
     followers: {
         type: Array,
-        default: ""
-    }, 
+        default: []
+    },
     followings: {
         type: Array,
-        default: ""
-    }, 
+        default: []
+    },
     isAdmin: {
         type: Boolean,
         default: false
-    }, 
+    },
     desc: {
-        type: String, 
+        type: String,
         max: 200
     }
 },
 
-    {timestamps: true}, 
+    { timestamps: true }
 
 )
 
